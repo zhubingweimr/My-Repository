@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				margin-top:10px;
+			}
+		</style>
+	</head>
+	<body>
+			<div>用户名：<input type="text" class="ipt"/><span></span></div>
+			<div>密码：<input type="text" class="ipt"/><span></span></div>
+			<div>确认密码：<input type="text" class="ipt"/><span></span></div>
+			<div>真实姓名：<input type="text" class="ipt"/><span></span></div>
+			<div>邮箱：<input type="text" class="ipt"/><span></span></div>
+			<div>手机号：<input type="text" class="ipt"/><span></span></div>
+			<div>身份证号：<input type="text" class="ipt"/><span></span></div>
+			<div>邮编：<input type="text" class="ipt"/><span></span></div>
+			<div>生日：<input type="text" class="ipt"/><span></span></div>
+		<script type="text/javascript">
+			var _ipt = document.getElementsByClassName("ipt");
+			var _spa = document.getElementsByTagName("span");
+			_ipt[0].onblur = function(){
+				var qq1 =/^[^\d,\W]\w{3,15}$/;
+				if(qq1.test(_ipt[0].value)==true){
+					_spa[0].innerHTML= "V"
+				}else{
+					_spa[0].innerHTML="请输入正确格式"
+				}
+			}
+			_ipt[1].onblur = function(){
+				var qq1 =/^[^\d,\W]\w{3,9}$/;
+				if(qq1.test(_ipt[1].value)==true){
+					_spa[1].innerHTML="V"
+				}else{
+					_spa[1].innerHTML="请输入正确格式"
+				}
+			}
+			_ipt[2].onblur = function(){
+				if(_ipt[2].value==_ipt[1].value)
+				{
+					_spa[2].innerHTML="V"
+				}else{
+					_spa[2].innerHTML="请输入正确格式"
+				}
+			}
+			_ipt[3].onblur = function(){
+				var qq1 =/^[\u4e00-\u9fa5]$/;
+				if(qq1.test(_ipt[3].value)==true){
+					_spa[3].innerHTML="V"
+				}else{
+					_spa[3].innerHTML="请输入正确格式"
+				}
+			}	
+			_ipt[4].onblur = function(){
+				var qq1 =/^[\w]+[@][\w]+(\.[^\d,\W]{2,3}){1,2}$/;
+				if(qq1.test(_ipt[4].value)==true){
+					_spa[4].innerHTML="V"
+				}else{
+					_spa[4].innerHTML="请输入正确格式"
+				}
+			}
+			_ipt[5].onblur = function(){
+				var qq1 =/^1\d{10}$/;
+				if(qq1.test(_ipt[5].value)==true){
+					_spa[5].innerHTML="V"
+				}else{
+					_spa[5].innerHTML="请输入正确格式"
+				}
+			}
+			_ipt[6].onblur = function(){
+				var qq1 =/^\d{6}(18|19|20)\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|x)$|^\d{6}\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}$/i;
+				if(qq1.test(_ipt[6].value)==true){
+					_spa[6].innerHTML="V"
+				}else{
+					_spa[6].innerHTML="请输入正确格式"
+				}
+			}
+			_ipt[7].onblur = function(){
+				var qq1 =/^\d{6}$/
+				if(qq1.test(_ipt[7].value)==true){
+					_spa[7].innerHTML="V"
+				}else{
+					_spa[7].innerHTML="请输入正确格式"
+				}
+			}
+			_ipt[8].onblur = function(){
+				var qq1 =/^(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])$/
+				if(qq1.test(_ipt[8].value)==true){
+					_spa[8].innerHTML="V"
+				}else{
+					_spa[8].innerHTML="请输入正确格式"
+				}
+			}
+		</script>
+</html>
